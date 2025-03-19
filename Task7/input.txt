@@ -1,1 +1,1 @@
-Inputs
+Input.txt
