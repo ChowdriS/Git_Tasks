@@ -141,5 +141,3 @@ Now, create and commit a file,
   git commit -m "update on task"
 
 Now the precommit hook script will the executed. In this case the "precommit script running" will be printed.
-
-
