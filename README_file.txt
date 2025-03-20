@@ -141,3 +141,40 @@ Now, create and commit a file,
   git commit -m "update on task"
 
 Now the precommit hook script will the executed. In this case the "precommit script running" will be printed.
+
+9. Working with Remote Repositories and Collaboration
+
+Create a file in main Branch and add and commit,
+  git add . --> add all files
+  git commit -m "file1.txt created" --> commit the changes
+
+Create a branch and modify the content of the file,
+  git checkout -b "branch1"  --> create a branch and switch to that branch
+  git add . --> to stage all files
+  git commit -m "update on file1.txt" --> to commit the changes
+
+Now, push the branch,
+  git push -u origin branch1  --> to push the branch
+
+Now, go to github and do code review and create pull request and merge the pull request,
+
+then make the changes to the local repo, by pulling the changes,
+  git pull --> to pull the changes
+
+10. Comprehensive Workflow with Forced Pushes and RecoveryObjective:Requirements
+
+If at all, we do a squashed commit of n commit in local in alternate branch and we tried to push the branch, git wont allow it.
+At the time, we go for forced push. 
+  git push --force origin feature-branch --> but it is not recommended
+
+Supose if a team mate, do a pulled the branch and made changes and pushed, after the push of the squashed commits, the team mates commit will be lost. 
+
+Alternately,
+  git push --force-with-lease origin feature-branch  --> this will push the branch if no one has pushed new commits.
+
+But for loss of commits, git have a command to retrive the lost commit,
+  git relog --> this will show the all the prev commits made on that branch.
+
+So, by creating a alternate branch with the commit hash, we can recover the commit,
+  git checkout -b <branch_name> <commit_hash>
+
